@@ -78,6 +78,7 @@ namespace MegaDesk_Sawyer
 
                     deskQuote.FirstName = textBoxFirstName.Text;
                     deskQuote.LastName = textBoxLastName.Text;
+                    deskQuote.Date = deskQuote.GenerateDate();
                     deskQuote.GetDesk().Width = width;
                     deskQuote.GetDesk().Depth = depth;
                     deskQuote.GetDesk().Drawers = drawers;

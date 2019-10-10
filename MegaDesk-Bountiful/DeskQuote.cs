@@ -9,6 +9,7 @@ namespace MegaDesk_Sawyer
     public class DeskQuote
     {
         private Desk desk = new Desk();
+        private DateTime _quoteDate;
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,9 +17,15 @@ namespace MegaDesk_Sawyer
         { 
             get 
             { 
-                return DateTime.Now.ToString("MM.dd.yyy");
+                return _quoteDate;
+            }
+
+            set 
+            {
+                _quoteDate = value;
             }
         }
+
         public int BaseDeskPrice { get; set; } = 200;
         public int DeskSurfaceAreaPrice { get; set; }
         public int DrawerPrice { get; set; }
@@ -26,6 +33,10 @@ namespace MegaDesk_Sawyer
         public string RushDays;
         public int Total { get; set; }
        
+        public DateTime GenerateDate ()
+        {
+            return DateTime.Now.ToString("MM.dd.yyy");
+        }
 
         public int DeskSurfaceArea()
         { 
