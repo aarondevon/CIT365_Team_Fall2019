@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MegaDesk_Sawyer
 {
     public partial class AddQuote : Form
     {
+        // Create deskQuote object
         public DeskQuote deskQuote = new DeskQuote();
+
         public AddQuote()
         {
             InitializeComponent();
@@ -79,6 +83,21 @@ namespace MegaDesk_Sawyer
                     deskQuote.GetDesk().Drawers = drawers;
                     deskQuote.GetDesk().Material = DeskMaterial.Text;
                     deskQuote.RushDays = Rush.Text;
+
+                    // convert JSON file to a string
+                    string deskQuoteJSON = File.ReadAllText(@"C:\Users\me\source\repos\CIT365_Team_Fall2019\MegaDesk-Bountiful\bin\quotes.json");
+
+                    // Deserialize JSON to List
+                    List<DeskQuote> deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
+
+                    // Add current quote to quote list
+                    deskQuoteList.Add(deskQuote);
+
+                    // Serialze List to JSON format
+                    string convertedJson = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+
+                    // Write updated quote to JSON file
+                    File.WriteAllText(@"C:\Users\me\source\repos\CIT365_Team_Fall2019\MegaDesk-Bountiful\bin\quotes.json", convertedJson);
 
                     displayQuote.Show();
                     this.Close();
