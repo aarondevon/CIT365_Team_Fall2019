@@ -13,6 +13,8 @@ namespace MegaDesk_Sawyer
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int BaseDeskPrice { get; set; } = 200;
+        public int DeskSurfaceAreaPrice { get; set; }
+
 
         public string RushDays;
 
