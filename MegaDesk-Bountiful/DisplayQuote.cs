@@ -32,7 +32,7 @@ namespace MegaDesk_Sawyer
         {
             //textBoxFirstName.Text = this.deskQuote.FirstName;
             labelCustomerValue.Text = $"{deskQuote.FirstName} {deskQuote.LastName}";
-            labelDateValue.Text = $"{deskQuote.Date()}";
+            labelDateValue.Text = $"{deskQuote.Date}";
             labelBasePriceValue.Text = $"${deskQuote.BaseDeskPrice}";
             labelAreaPriceValue.Text = $"${deskQuote.PriceDeskSurfaceArea()}";
             labelDrawersValue.Text = $"${deskQuote.PriceDrawers()}";

@@ -9,11 +9,11 @@ namespace MegaDesk_Sawyer
     public class DeskQuote
     {
         private Desk desk = new Desk();
-        private DateTime _quoteDate;
+        private string _quoteDate;
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime Date
+        public string Date
         { 
             get 
             { 
@@ -33,7 +33,7 @@ namespace MegaDesk_Sawyer
         public string RushDays;
         public int Total { get; set; }
        
-        public DateTime GenerateDate ()
+        public string GenerateDate ()
         {
             return DateTime.Now.ToString("MM.dd.yyy");
         }
