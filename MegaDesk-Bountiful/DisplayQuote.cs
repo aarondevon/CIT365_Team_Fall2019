@@ -34,7 +34,7 @@ namespace MegaDesk_Sawyer
             labelCustomerValue.Text = $"{deskQuote.FirstName} {deskQuote.LastName}";
             labelDateValue.Text = $"{deskQuote.Date}";
             labelBasePriceValue.Text = $"${deskQuote.BaseDeskPrice}";
-            labelAreaPriceValue.Text = $"${deskQuote.PriceDeskSurfaceArea()}";
+            labelAreaPriceValue.Text = $"${deskQuote.DeskSurfaceAreaPrice}";
             labelDrawersValue.Text = $"${deskQuote.PriceDrawers()}";
             labelMaterialValue.Text = $"${deskQuote.PriceMaterial()}";
             labelRushValue.Text = $"${deskQuote.PriceRush()}";

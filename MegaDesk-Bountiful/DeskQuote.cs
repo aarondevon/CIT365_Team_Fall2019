@@ -29,7 +29,13 @@ namespace MegaDesk_Sawyer
         public int BaseDeskPrice { get; set; } = 200;
         public int DeskSurfaceAreaPrice { get; set; }
         public int DrawerPrice { get; set; }
-        public int Material { get; set; }
+
+        public string Material
+        {
+            get
+            { return desk.Material; }
+            set { desk.Material = value; }
+        }
         public string RushDays;
         public int Total { get; set; }
        
