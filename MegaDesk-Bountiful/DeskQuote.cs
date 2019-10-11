@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace MegaDesk_Sawyer
 {
     public class DeskQuote
     {
+        private Desk desk = new Desk();
+
         // Desk data
         public int Width
         {
@@ -34,9 +37,8 @@ namespace MegaDesk_Sawyer
         }
 
         // Quote data
-        private Desk desk = new Desk();
+        private int[,] rushOrderPricing = new int[3,3];
         private string _quoteDate;
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Date
@@ -156,6 +158,21 @@ namespace MegaDesk_Sawyer
         public int CalculateTotal()
         {
             return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial() + PriceRush();
+        }
+
+        public void GetRushOrder()
+        {
+            string[] textRushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+            int textRushPricesIndex = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    rushOrderPricing[i, j] = Int32.Parse(textRushPrices[textRushPricesIndex]);
+                    textRushPricesIndex++;
+                }
+            }
+            
         }
     }
 }

@@ -57,6 +57,7 @@ namespace MegaDesk_Sawyer
         {
             LoadDeskMaterialCombo(DeskMaterial);
             LoadRushCombo(Rush);
+            deskQuote.GetRushOrder();
         }
 
         private void MainMenu_Click(object sender, EventArgs e)
