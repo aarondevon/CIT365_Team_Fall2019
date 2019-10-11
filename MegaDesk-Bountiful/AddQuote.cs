@@ -87,6 +87,7 @@ namespace MegaDesk_Sawyer
                     deskQuote.DeskSurfaceAreaPrice = deskQuote.PriceDeskSurfaceArea();
                     deskQuote.DrawerPrice = deskQuote.PriceDrawers();
                     deskQuote.RushDays = Rush.Text;
+                    deskQuote.Total = deskQuote.CalculateTotal();
 
                     // convert JSON file to a string
                     string deskQuoteJSON = File.ReadAllText(@"quotes.json");

@@ -143,7 +143,7 @@ namespace MegaDesk_Sawyer
             return 0;
         }
 
-        public int GetTotal()
+        public int CalculateTotal()
         {
             return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial() + PriceRush();
         }

@@ -38,7 +38,7 @@ namespace MegaDesk_Sawyer
             labelDrawersValue.Text = $"${deskQuote.DrawerPrice}";
             labelMaterialValue.Text = $"${deskQuote.MaterialPrice}";
             labelRushValue.Text = $"${deskQuote.PriceRush()}";
-            labelTotalValue.Text = $"${deskQuote.GetTotal()}";
+            labelTotalValue.Text = $"${deskQuote.Total}";
             
 
         }
