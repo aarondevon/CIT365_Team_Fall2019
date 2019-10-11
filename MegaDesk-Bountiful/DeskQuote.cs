@@ -109,15 +109,15 @@ namespace MegaDesk_Sawyer
             {
                 if (DeskSurfaceArea() > 2000)
                 {
-                    return 80;
+                    return rushOrderPricing[0,2];
                 }
                 else if (DeskSurfaceArea() >= 1000 && DeskSurfaceArea() <= 2000)
                 {
-                    return 70;
+                    return rushOrderPricing[0, 1];
                 }
                 else
                 {
-                    return 60;
+                    return rushOrderPricing[0, 0];
                 }
             }
 
@@ -125,15 +125,15 @@ namespace MegaDesk_Sawyer
             {
                 if (DeskSurfaceArea() > 2000)
                 {
-                    return 60;
+                    return rushOrderPricing[1, 2];
                 }
                 else if (DeskSurfaceArea() >= 1000 && DeskSurfaceArea() <= 2000)
                 {
-                    return 50;
+                    return rushOrderPricing[1, 1];
                 }
                 else
                 {
-                    return 40;
+                    return rushOrderPricing[1, 0];
                 }
             }
 
@@ -141,15 +141,15 @@ namespace MegaDesk_Sawyer
             {
                 if (DeskSurfaceArea() > 2000)
                 {
-                    return 40;
+                    return rushOrderPricing[2, 2];
                 }
                 else if (DeskSurfaceArea() >= 1000 && DeskSurfaceArea() <= 2000)
                 {
-                    return 35;
+                    return rushOrderPricing[2, 1];
                 }
                 else
                 {
-                    return 30;
+                    return rushOrderPricing[2, 0];
                 }
             }
             return 0;
@@ -162,17 +162,23 @@ namespace MegaDesk_Sawyer
 
         public void GetRushOrder()
         {
-            string[] textRushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
-            int textRushPricesIndex = 0;
-            for (int i = 0; i < 3; i++)
+            try
             {
-                for (int j = 0; j < 3; j++)
+                string[] textRushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                int textRushPricesIndex = 0;
+                for (int i = 0; i < 3; i++)
                 {
-                    rushOrderPricing[i, j] = Int32.Parse(textRushPrices[textRushPricesIndex]);
-                    textRushPricesIndex++;
+                    for (int j = 0; j < 3; j++)
+                    {
+                        rushOrderPricing[i, j] = Int32.Parse(textRushPrices[textRushPricesIndex]);
+                        textRushPricesIndex++;
+                    }
                 }
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }
