@@ -8,22 +8,17 @@ namespace MegaDesk_Sawyer
 {
     public class DeskQuote
     {
-        private Desk desk = new Desk();
-        private string _quoteDate;
+        // Desk data
+        public int Width
+        {
+            get { return desk.Width;}
+            set { desk.Width = value; }
+        }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Date
-        { 
-            get 
-            { 
-                return _quoteDate;
-            }
-
-            set 
-            {
-                _quoteDate = value;
-            }
+        public int Depth
+        {
+            get { return desk.Depth;}
+            set { desk.Depth = value; }
         }
 
         public int Drawers
@@ -31,21 +26,36 @@ namespace MegaDesk_Sawyer
             get { return desk.Drawers;}
             set { desk.Drawers = value; }
         }
-
-        public int BaseDeskPrice { get; set; } = 200;
-        public int DeskSurfaceAreaPrice { get; set; }
-        public int DrawerPrice { get; set; }
-        public int MaterialPrice { get; set; }
-
         public string Material
         {
             get
             { return desk.Material; }
             set { desk.Material = value; }
         }
+
+        // Quote data
+        private Desk desk = new Desk();
+        private string _quoteDate;
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Date
+        { 
+            get { return _quoteDate; }
+            set { _quoteDate = value; }
+        }
+      
+        public int BaseDeskPrice { get; set; } = 200;
+        public int DeskSurfaceAreaPrice { get; set; }
+        public int DrawerPrice { get; set; }
+        public int MaterialPrice { get; set; }
         public string RushDays;
         public int Total { get; set; }
-       
+
+        public Desk GetDesk()
+        {
+            return desk;
+        }
         public string GenerateDate ()
         {
             return DateTime.Now.ToString("MM.dd.yyy");
@@ -53,7 +63,7 @@ namespace MegaDesk_Sawyer
 
         public int DeskSurfaceArea()
         { 
-            return desk.Width * desk.Depth;
+            return Width * Depth;
         }
 
         public int PriceDeskSurfaceArea()
@@ -70,12 +80,12 @@ namespace MegaDesk_Sawyer
 
         public int PriceDrawers()
         {
-            return desk.Drawers * 50;
+            return Drawers * 50;
         }
 
         public int PriceMaterial()
         {
-            switch (desk.Material)
+            switch (Material)
             {
                 case "Oak":
                     return 200;
@@ -147,11 +157,5 @@ namespace MegaDesk_Sawyer
         {
             return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial() + PriceRush();
         }
-
-        public Desk GetDesk()
-        {
-            return desk;
-        }
-
     }
 }
