@@ -86,7 +86,7 @@ namespace MegaDesk_Sawyer
                     deskQuote.RushDays = Rush.Text;
 
                     // convert JSON file to a string
-                    string deskQuoteJSON = File.ReadAllText(@"C:\Users\me\source\repos\CIT365_Team_Fall2019\MegaDesk-Bountiful\bin\quotes.json");
+                    string deskQuoteJSON = File.ReadAllText(@"quotes.json");
 
                     // Deserialize JSON to List
                     List<DeskQuote> deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
@@ -98,7 +98,7 @@ namespace MegaDesk_Sawyer
                     string convertedJson = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
 
                     // Write updated quote to JSON file
-                    File.WriteAllText(@"C:\Users\me\source\repos\CIT365_Team_Fall2019\MegaDesk-Bountiful\bin\quotes.json", convertedJson);
+                    File.WriteAllText(@"quotes.json", convertedJson);
 
                     displayQuote.Show();
                     this.Close();
