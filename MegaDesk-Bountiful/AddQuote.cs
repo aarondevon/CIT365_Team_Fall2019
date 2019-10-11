@@ -81,9 +81,11 @@ namespace MegaDesk_Sawyer
                     deskQuote.Date = deskQuote.GenerateDate();
                     deskQuote.GetDesk().Width = width;
                     deskQuote.GetDesk().Depth = depth;
-                    deskQuote.GetDesk().Drawers = drawers;
+                    deskQuote.Drawers = drawers;
                     deskQuote.Material = DeskMaterial.Text;
+                    deskQuote.MaterialPrice = deskQuote.PriceMaterial();
                     deskQuote.DeskSurfaceAreaPrice = deskQuote.PriceDeskSurfaceArea();
+                    deskQuote.DrawerPrice = deskQuote.PriceDrawers();
                     deskQuote.RushDays = Rush.Text;
 
                     // convert JSON file to a string

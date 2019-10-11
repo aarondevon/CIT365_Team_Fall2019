@@ -26,9 +26,16 @@ namespace MegaDesk_Sawyer
             }
         }
 
+        public int Drawers
+        {
+            get { return desk.Drawers;}
+            set { desk.Drawers = value; }
+        }
+
         public int BaseDeskPrice { get; set; } = 200;
         public int DeskSurfaceAreaPrice { get; set; }
         public int DrawerPrice { get; set; }
+        public int MaterialPrice { get; set; }
 
         public string Material
         {
