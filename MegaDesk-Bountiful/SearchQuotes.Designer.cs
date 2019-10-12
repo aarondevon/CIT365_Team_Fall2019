@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.MainMenu = new System.Windows.Forms.Button();
+            this.DeskMaterial = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -46,18 +47,29 @@
             this.MainMenu.UseVisualStyleBackColor = false;
             this.MainMenu.Click += new System.EventHandler(this.MainMenu_Click);
             // 
+            // DeskMaterial
+            // 
+            this.DeskMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeskMaterial.FormattingEnabled = true;
+            this.DeskMaterial.Location = new System.Drawing.Point(251, 136);
+            this.DeskMaterial.Name = "DeskMaterial";
+            this.DeskMaterial.Size = new System.Drawing.Size(121, 21);
+            this.DeskMaterial.TabIndex = 1;
+            // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.DeskMaterial);
             this.Controls.Add(this.MainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
+            this.Load += new System.EventHandler(this.SearchQuotes_Load);
             this.ResumeLayout(false);
 
         }
@@ -65,5 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Button MainMenu;
+        private System.Windows.Forms.ComboBox DeskMaterial;
     }
 }
