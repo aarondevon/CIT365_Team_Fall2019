@@ -51,7 +51,7 @@
             // 
             this.DeskMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeskMaterial.FormattingEnabled = true;
-            this.DeskMaterial.Location = new System.Drawing.Point(251, 136);
+            this.DeskMaterial.Location = new System.Drawing.Point(254, 35);
             this.DeskMaterial.Name = "DeskMaterial";
             this.DeskMaterial.Size = new System.Drawing.Size(121, 21);
             this.DeskMaterial.TabIndex = 1;

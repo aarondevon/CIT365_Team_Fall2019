@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MegaDesk_Sawyer
 {
@@ -37,6 +39,22 @@ namespace MegaDesk_Sawyer
             cbo.DisplayMember = "Description";
             cbo.ValueMember = "value";
         }
+
+
+        // convert JSON file to a string
+        string deskQuoteJSON = File.ReadAllText(@"quotes.json");
+
+        private List<DeskQuote> convertJsonToList()
+        {
+            // Deserialize JSON to List
+            return JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
+        }
+
+        private void DisplaySearchResults()
+        {
+            List<DeskQuote> deskQuoteList = convertJsonToList();
+        }
+        
 
         private void MainMenu_Click(object sender, EventArgs e)
         {
