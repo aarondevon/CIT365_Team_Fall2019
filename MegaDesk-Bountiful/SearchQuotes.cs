@@ -23,6 +23,7 @@ namespace MegaDesk_Sawyer
         private void SearchQuotes_Load(object sender, EventArgs e)
         {
             LoadDeskMaterialCombo(DeskMaterial);
+            DisplaySearchResults();
         }
 
         public static void LoadDeskMaterialCombo(ComboBox cbo)
@@ -50,9 +51,27 @@ namespace MegaDesk_Sawyer
             return JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
         }
 
+        private List<DeskQuote> searchResults()
+        {
+            List<DeskQuote> results = new List<DeskQuote>();
+
+            foreach (var quote in convertJsonToList())
+            {
+                if (quote.Material == DeskMaterial.Text)
+                {
+                    results.Add(quote);
+                }
+            }
+
+            return results;
+        }
+
         private void DisplaySearchResults()
         {
-            List<DeskQuote> deskQuoteList = convertJsonToList();
+            List<DeskQuote> results = searchResults();
+            BindingList<DeskQuote> bindingList = new BindingList<DeskQuote>(results);
+            BindingSource source = new BindingSource(bindingList, null);
+            dataGridView1.DataSource = source;
         }
         
 
