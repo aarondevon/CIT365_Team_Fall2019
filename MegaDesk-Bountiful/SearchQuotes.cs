@@ -70,7 +70,12 @@ namespace MegaDesk_Sawyer
             List<DeskQuote> results = searchResults();
             BindingList<DeskQuote> bindingList = new BindingList<DeskQuote>(results);
             BindingSource source = new BindingSource(bindingList, null);
-            dataGridView1.DataSource = source;
+            dataGridView1.DataSource = results.Select(deskQuote => new 
+            {
+                Customer = $"{deskQuote.FirstName} {deskQuote.LastName}",
+                Date = $"{deskQuote.Date}",
+                Width = $"{deskQuote.Width}"
+            }).ToList();
         }
         
 
