@@ -81,6 +81,10 @@ namespace MegaDesk_Sawyer
             mainMenu.Show();
             this.Close();
         }
-      
+
+        private void DeskMaterial_DropDownClosed(object sender, EventArgs e)
+        {
+            DisplaySearchResults();
+        }
     }
 }

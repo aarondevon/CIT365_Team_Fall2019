@@ -11,6 +11,24 @@ namespace MegaDesk_Sawyer
     {
         private Desk desk = new Desk();
 
+        // Quote data
+        private int[,] rushOrderPricing = new int[3, 3];
+        private string _quoteDate;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Date
+        {
+            get { return _quoteDate; }
+            set { _quoteDate = value; }
+        }
+
+        public int BaseDeskPrice { get; set; } = 200;
+        public int DeskSurfaceAreaPrice { get; set; }
+        public int DrawerPrice { get; set; }
+        public int MaterialPrice { get; set; }
+        public string RushDays;
+        public int Total { get; set; }
+
         // Desk data
         public int Width
         {
@@ -36,23 +54,7 @@ namespace MegaDesk_Sawyer
             set { desk.Material = value; }
         }
 
-        // Quote data
-        private int[,] rushOrderPricing = new int[3,3];
-        private string _quoteDate;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Date
-        { 
-            get { return _quoteDate; }
-            set { _quoteDate = value; }
-        }
-      
-        public int BaseDeskPrice { get; set; } = 200;
-        public int DeskSurfaceAreaPrice { get; set; }
-        public int DrawerPrice { get; set; }
-        public int MaterialPrice { get; set; }
-        public string RushDays;
-        public int Total { get; set; }
+       
 
         public Desk GetDesk()
         {

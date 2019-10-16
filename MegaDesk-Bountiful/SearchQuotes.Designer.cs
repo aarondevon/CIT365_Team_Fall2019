@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.MainMenu = new System.Windows.Forms.Button();
             this.DeskMaterial = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SurfaceArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Drawers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,43 +53,18 @@
             // 
             this.DeskMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeskMaterial.FormattingEnabled = true;
-            this.DeskMaterial.Location = new System.Drawing.Point(228, 12);
+            this.DeskMaterial.Location = new System.Drawing.Point(183, 12);
             this.DeskMaterial.Name = "DeskMaterial";
             this.DeskMaterial.Size = new System.Drawing.Size(121, 21);
             this.DeskMaterial.TabIndex = 1;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
-            this.Date,
-            this.SurfaceArea,
-            this.Drawers});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(400, 88);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(394, 205);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // Name
-            // 
-            this.Name.Text = "Name";
-            // 
-            // Date
-            // 
-            this.Date.Text = "Date";
-            // 
-            // SurfaceArea
-            // 
-            this.SurfaceArea.Text = "Surface Area";
+            this.DeskMaterial.DropDownClosed += new System.EventHandler(this.DeskMaterial_DropDownClosed);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 221);
+            this.dataGridView1.Location = new System.Drawing.Point(183, 39);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(689, 510);
             this.dataGridView1.TabIndex = 3;
             // 
             // SearchQuotes
@@ -104,13 +74,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.DeskMaterial);
             this.Controls.Add(this.MainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            //this.Name = "SearchQuotes";
+            this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -122,11 +91,6 @@
 
         private System.Windows.Forms.Button MainMenu;
         private System.Windows.Forms.ComboBox DeskMaterial;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Name;
-        private System.Windows.Forms.ColumnHeader Date;
-        private System.Windows.Forms.ColumnHeader SurfaceArea;
-        private System.Windows.Forms.ColumnHeader Drawers;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
