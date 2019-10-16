@@ -74,7 +74,11 @@ namespace MegaDesk_Sawyer
             {
                 Customer = $"{deskQuote.FirstName} {deskQuote.LastName}",
                 Date = $"{deskQuote.Date}",
-                Width = $"{deskQuote.Width}"
+                Width = $"{deskQuote.Width}",
+                Depth = $"{deskQuote.Depth}",
+                Drawers = $"{deskQuote.Drawers}",
+                Material = $"{deskQuote.Material}",
+                Total = $"{deskQuote.Total}"
             }).ToList();
         }
         
