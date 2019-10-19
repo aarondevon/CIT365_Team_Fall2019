@@ -242,6 +242,8 @@ namespace MegaDesk_Team
 
     public enum DeskMaterial
     {
+        [Description("Desk Material")]
+        Material = -1,
         [Description("Oak")]
         Oak = 0,
         [Description("Laminate")]

@@ -32,8 +32,6 @@ namespace MegaDesk_Team
         private void displaySearchResults()
         {
             List<DeskQuote> quotes = convertJsonToList();
-            //BindingList<DeskQuote> bindingList = new BindingList<DeskQuote>(quotes);
-            //BindingSource source = new BindingSource(bindingList, null);
             dataGridView1.DataSource = quotes.Select(deskQuote => new
             {
                 Customer = $"{deskQuote.FirstName} {deskQuote.LastName}",

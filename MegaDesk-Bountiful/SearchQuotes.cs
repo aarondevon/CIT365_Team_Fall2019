@@ -68,8 +68,6 @@ namespace MegaDesk_Team
         private void displaySearchResults()
         {
             List<DeskQuote> results = searchResults();
-            BindingList<DeskQuote> bindingList = new BindingList<DeskQuote>(results);
-            BindingSource source = new BindingSource(bindingList, null);
             dataGridView1.DataSource = results.Select(deskQuote => new 
             {
                 Customer = $"{deskQuote.FirstName} {deskQuote.LastName}",
