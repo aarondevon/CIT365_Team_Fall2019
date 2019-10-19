@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaDesk_Sawyer.Properties;
 
 namespace MegaDesk_Team
 {
@@ -166,7 +167,7 @@ namespace MegaDesk_Team
         {
             try
             {
-                string[] textRushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                string[] textRushPrices = File.ReadAllLines(Resources.rushOrderPrices);
                 int textRushPricesIndex = 0;
                 for (int i = 0; i < 3; i++)
                 {
