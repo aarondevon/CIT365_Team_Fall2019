@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_Hargan
+﻿namespace MegaDesk_Sawyer
 {
     partial class ViewAllQuotes
     {

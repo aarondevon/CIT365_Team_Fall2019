@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-namespace MegaDesk_Hargan
+namespace MegaDesk_Sawyer
 {
     public partial class ViewAllQuotes : Form
     {

@@ -73,7 +73,7 @@ namespace MegaDesk_Sawyer
                 int width = Convert.ToInt32(textBoxWidth.Text);
                 int depth = Convert.ToInt32(textBoxDepth.Text);
                 int drawers = Convert.ToInt32((textBoxDrawers.Text));
-                if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
+                if (validWidth(width) && validDepth(depth) && validDrawers(drawers) && validMaterial())
                 {
                     DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
@@ -125,6 +125,11 @@ namespace MegaDesk_Sawyer
                         labelDrawers.Text = "Range 0-7:";
                         labelDrawers.ForeColor = Color.DarkRed;
                     }
+                    if (!validMaterial())
+                    {
+                        labelMaterial.Text = "Material:";
+                        labelMaterial.ForeColor = Color.DarkRed;
+                    }
                 }
 
             }
@@ -157,6 +162,16 @@ namespace MegaDesk_Sawyer
         private bool validDrawers(int drawers)
         {
             if (drawers >= deskQuote.GetDesk().GetMinDrawers() && drawers <= deskQuote.GetDesk().GetMaxDrawers())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool validMaterial()
+        {
+            if (DeskMaterial.Text != "Material")
             {
                 return true;
             }
