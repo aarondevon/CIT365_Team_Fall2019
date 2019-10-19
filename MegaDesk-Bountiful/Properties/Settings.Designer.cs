@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaDesk_Sawyer.Properties
+namespace MegaDesk_Team.Properties
 {
 
 

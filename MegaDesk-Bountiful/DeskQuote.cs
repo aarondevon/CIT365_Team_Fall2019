@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk_Sawyer
+namespace MegaDesk_Team
 {
     public class DeskQuote
     {

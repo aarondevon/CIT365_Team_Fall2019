@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace MegaDesk_Sawyer
+namespace MegaDesk_Team
 {
 
     public partial class SearchQuotes : Form

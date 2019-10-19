@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_Sawyer
+﻿namespace MegaDesk_Team
 {
     partial class MainMenu
     {
