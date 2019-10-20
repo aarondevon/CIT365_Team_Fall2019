@@ -40,12 +40,11 @@ namespace MegaDesk_Team
             cbo.ValueMember = "value";
         }
 
-
-        // convert JSON file to a string
-        string deskQuoteJSON = File.ReadAllText(@"quotes.json");
-
         private List<DeskQuote> convertJsonToList()
         {
+            var path = Application.StartupPath + @"\quotes.json";
+            string deskQuoteJSON = File.ReadAllText(path);
+            
             // Deserialize JSON to List
             return JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
         }

@@ -19,11 +19,11 @@ namespace MegaDesk_Team
             InitializeComponent();
         }
 
-        // convert JSON file to a string
-        string deskQuoteJSON = File.ReadAllText(@"quotes.json");
-
         private List<DeskQuote> convertJsonToList()
         {
+            // convert JSON file to a string
+            var path = Application.StartupPath + @"\quotes.json";
+            string deskQuoteJSON = File.ReadAllText(path);
             // Deserialize JSON to List
             return JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
         }

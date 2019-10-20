@@ -91,7 +91,8 @@ namespace MegaDesk_Team
                     deskQuote.Total = deskQuote.CalculateTotal();
 
                     // convert JSON file to a string
-                    string deskQuoteJSON = File.ReadAllText(@"quotes.json");
+                    var path = Application.StartupPath + @"\quotes.json";
+                    string deskQuoteJSON = File.ReadAllText(path);
 
                     // Deserialize JSON to List
                     List<DeskQuote> deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(deskQuoteJSON);
@@ -103,7 +104,7 @@ namespace MegaDesk_Team
                     string convertedJson = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
 
                     // Write updated quote to JSON file
-                    File.WriteAllText(@"quotes.json", convertedJson);
+                    File.WriteAllText(path, convertedJson);
 
                     displayQuote.Show();
                     this.Close();
